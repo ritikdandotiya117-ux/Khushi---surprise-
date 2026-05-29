@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Khushi Birthday Surprise ??</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  background: url('IMG_20260430_234800_552.jpg') no-repeat center/cover;
+  overflow-x: hidden;
+}
+
+.overlay {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
+  min-height: 100vh;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+h1 { color: pink; }
+
+input, button {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  margin: 10px;
+}
+
+button {
+  background: pink;
+  cursor: pointer;
+}
+
+.slider {
+  display: flex;
+  gap: 15px;
+  animation: slide 18s linear infinite;
+}
+
+.slider img {
+  height: 220px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@keyframes slide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.fullscreen {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.fullscreen img {
+  max-width:90%;
+  max-height:90%;
+}
+
+video {
+  width: 300px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.message {
+  margin-top: 30px;
+  font-size: 20px;
+  color: pink;
+}
+
+.heart {
+  position: fixed;
+  color: red;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<h1>?? Happy Birthday Khushi ??</h1>
+
+<!-- PHOTO CODE -->
+<input type="password" id="code1" placeholder="Enter Secret Code">
+<button onclick="check1()">Unlock Photos ??</button>
+
+<div id="photos" style="display:none;">
+<div class="slider">
+<img src="IMG_20260430_234800_552.jpg" onclick="openImg(this.src)">
+<img src="IMG_20260511_155715_220.webp" onclick="openImg(this.src)">
+<img src="IMG_20260501_004005.jpg" onclick="openImg(this.src)">
+<img src="c4f244b3-52c2-459c-a7a3-faf41c3ba518.png" onclick="openImg(this.src)">
+<img src="IMG_20260429_211454_693.jpg" onclick="openImg(this.src)">
+<img src="055fea9d-3259-4569-b687-128b6bf576ec.png" onclick="openImg(this.src)">
+<img src="IMG_20260511_155826_362.webp" onclick="openImg(this.src)">
+</div>
+</div>
+
+<!-- FULL IMAGE -->
+<div class="fullscreen" id="full" onclick="closeImg()">
+<img id="img">
+</div>
+
+<!-- VIDEO CODE -->
+<input type="password" id="code2" placeholder="Enter Second Code">
+<button onclick="check2()">Unlock Videos ??</button>
+
+<div id="videos" style="display:none;">
+<video controls src="video1.mp4"></video>
+<video controls src="video2.mp4"></video>
+<video controls src="video3.mp4"></video>
+</div>
+
+<div class="message">
+Happy Birthday Khushi ????
+
+Sach bolu…
+tum meri life ki un logon me se ho jinke bina din thoda sa adhura lagta hai ??
+
+4 saal ho gaye hume saath me…
+aur honestly, padhai se zyada humne hasi-mazaak kia hai ??
+Par pata hai…
+ye jo choti choti baatein hain na, ye hi sabse special hain ??
+
+Tumhari ek habit hai…
+kabhi bina reason ke hansna ??
+kabhi bina reason ke gussa ho jana ??
+aur kabhi bina baat ke ignore kar dena ????
+Aur phir main sochta rehta hu —
+ab maine kya galti kar di ??
+
+Par ek baat sach me…
+jitna main tumse mazaak karta hu na,
+utna hi tum mere liye important ho… bas bolta nahi hu ??
+
+Tum sirf meri bestfriend nahi ho…
+tum wo insaan ho jiske saath main bina soche sab kuch share kar leta hu…
+aur jiske saath rehke mujhe kabhi fake hone ki zarurat nahi padti ??
+
+Aur haan…
+kabhi kabhi lagta hai ki
+tum thodi si zyada hi special ho mere liye… jitna hona chahiye usse bhi zyada ??
+
+Par chalo…
+aaj ke din sirf itna hi —
+
+Tum hamesha aise hi hasta raho,
+khush raho, aur mujhe irritate karti raho ??
+
+Aur haan…
+aaj ttreat to tum pakka dogi ????
+
+Once again,
+Happy Birthday Khushi ????
+
+?? 
+</div>
+
+</div>
+
+<script>
+
+function check1(){
+if(document.getElementById("code1").value=="0912"){
+document.getElementById("photos").style.display="block";
+hearts();
+}else alert("Wrong Code ??");
+}
+
+function check2(){
+if(document.getElementById("code2").value=="2611"){
+document.getElementById("videos").style.display="block";
+hearts();
+}else alert("Wrong Code ??");
+}
+
+function openImg(src){
+document.getElementById("full").style.display="flex";
+document.getElementById("img").src=src;
+}
+
+function closeImg(){
+document.getElementById("full").style.display="none";
+}
+
+function hearts(){
+for(let i=0;i<20;i++){
+let h=document.createElement("div");
+h.innerHTML="??";
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+}
+
+</script>
+
+</body>
+</html>
