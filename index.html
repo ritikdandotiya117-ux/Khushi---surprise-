@@ -226,19 +226,29 @@ Happy Birthday Khushi 🧿🫶
 
 <script>
 
+
 function check1(){
-if(document.getElementById("code1").value=="0912"){
-document.getElementById("photos").style.display="block";
-hearts();
-}else alert("Wrong Code ??");
+  if(document.getElementById("code1").value=="0912"){
+    document.getElementById("photos").style.display="block";
+    const section=document.getElementById("messageGallery");
+    if(section) section.style.display="block";
+    hearts();
+  } else {
+    alert("Wrong Code ??");
+  }
 }
 
 function check2(){
-if(document.getElementById("code2").value=="2611"){
-document.getElementById("videos").style.display="block";
-hearts();
-}else alert("Wrong Code ??");
+  if(document.getElementById("code2").value=="0961"){
+    document.getElementById("videos").style.display="block";
+    const section=document.getElementById("messageGallery");
+    if(section) section.style.display="none";
+    hearts();
+  } else {
+    alert("Wrong Code ??");
+  }
 }
+
 
 function openImg(src){
 document.getElementById("full").style.display="flex";
